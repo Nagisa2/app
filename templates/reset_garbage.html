@@ -1,0 +1,38 @@
+<!-- templates/reset_garbage.html -->
+<!-- ゴミ回収ページ -->
+
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>ゴミ回収</h2>
+    
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('reset_garbage') }}">
+        <div class="form-group">
+            <label for="bin_id">ゴミ箱ID:</label>
+            <input type="text" id="bin_id" name="bin_id" required maxlength="8">
+        </div>
+        
+        <h2>回収したゴミの種類を選択:</h2>
+        {% for garbage_type in garbage_types %}
+            <div class="garbage-item">
+                <input type="checkbox" id="{{ garbage_type }}" name="garbage_types" value="{{ garbage_type }}">
+                <label for="{{ garbage_type }}">{{ garbage_type }}</label>
+            </div>
+        {% endfor %}
+        
+        <button type="submit">完了</button>
+    </form>
+
+    <!-- JavaScriptファイルを読み込む -->
+    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+{% endblock %}

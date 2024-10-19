@@ -1,0 +1,89 @@
+<!-- templates/edit_bin.html -->
+<!-- ゴミ箱の編集ページ -->
+
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>ゴミ箱の編集</h2>
+
+<!-- ゴミ箱IDの選択 -->
+<form method="POST" id="bin-selection-form">
+    <div class="form-group">
+        <label for="selected_bin_id">ゴミ箱IDを入力してください:</label>
+        <input type="text" name="selected_bin_id" id="selected_bin_id" value="{{ selected_bin_id if selected_bin_id else '' }}" required maxlength="8">
+    </div>
+    <button type="submit" name="action" value="select_bin">選択</button>
+</form>
+
+{% if selected_bin_id %}
+<h3>選択したゴミ箱ID: {{ selected_bin_id }}</h3>
+
+{% if bin_data %}
+    <p>設置場所: {{ bin_data[1] }}</p>
+
+    <form method="POST" id="edit-form">
+        <input type="hidden" name="selected_bin_id" value="{{ selected_bin_id }}">
+
+        <div class="form-group">
+            <label for="edit_option">編集項目を選択してください:</label>
+            <select name="edit_option" id="edit_option" onchange="showEditForm(this.value)">
+                <option value="">選択してください</option>
+                <option value="update_id">ID名の変更</option>
+                <option value="update_location">設置場所の変更</option>
+                <option value="update_capacity">容量の変更</option>
+                <option value="delete">ゴミ箱の削除</option>
+            </select>
+        </div>
+
+        <div id="id_edit_form" style="display:none;">
+            <!-- ID名の変更 -->
+            <div class="form-group">
+                <label for="new_bin_id">新しいID名:</label>
+                <input type="text" name="new_bin_id" id="new_bin_id" value="{{ bin_data[0] }}" required maxlength="8">
+            </div>
+            <button type="submit" name="action" value="update_id">IDを更新する</button>
+        </div>
+
+        <div id="location_edit_form" style="display:none;">
+            <!-- 設置場所の変更 -->
+            <div class="form-group">
+                <label for="new_location">新しい設置場所:</label>
+                <input type="text" name="new_location" id="new_location" value="{{ bin_data[1] }}" required maxlength="50">
+            </div>
+            <button type="submit" name="action" value="update_location">設置場所を更新する</button>
+        </div>
+
+        <div id="capacity_edit_form" style="display:none;">
+            <!-- 容量の変更 -->
+            <div class="form-group">
+                <label for="new_capacity">新しい容量:</label>
+                <input type="number" name="new_capacity" id="new_capacity" value="{{ capacity[0] if capacity else '' }}" min="0">
+            </div>
+            <button type="submit" name="action" value="update_capacity">容量を更新する</button>
+        </div>
+
+        <div id="delete_form" style="display:none;">
+            <!-- ゴミ箱の削除 -->
+            <div class="form-group">
+                <button type="submit" name="action" value="delete" onclick="return confirm('本当に削除しますか？')">ゴミ箱を削除する</button>
+            </div>
+        </div>
+    </form>
+{% endif %}
+{% endif %}
+
+<br>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<!-- JavaScriptファイルを読み込む -->
+<script src="{{ url_for('static', filename='js/edit_bin.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/form.js') }}" defer></script>
+
+{% endblock %}

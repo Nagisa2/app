@@ -1,0 +1,21 @@
+<!-- templates/memory_game.html -->
+<!-- 音神経衰弱のページ -->
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="game-container">
+    <h2>音神経衰弱ゲーム</h2>
+    <div class="timer">タイマー: <span id="timer">00:00</span></div>
+    <div class="best-time">ベストタイム: <span id="best-time">00:00</span></div>
+    
+    <button id="start-button">スタート</button>
+    <button id="restart-button" style="display: none;">再スタート</button>
+    
+    <div id="game-board" class="game-board"></div>
+    <audio id="sound-player" preload="auto"></audio>
+</div>
+<!-- メモリゲーム用のスタイルシートにリンク -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/memory_game.css') }}">
+<script src="{{ url_for('static', filename='js/memory_game.js') }}" defer></script>
+{% endblock %}

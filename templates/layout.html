@@ -1,0 +1,50 @@
+<!-- templates/layout.html -->
+<!-- 共通レイアウトのページ -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon2.ico') }}">
+    <script src="{{ url_for('static', filename='js/menu.js') }}" defer></script>
+    <title>オトセパ管理システム</title>
+</head>
+<body>
+    <header>
+        <!-- メニューバーの設定 -->
+        <nav>
+            <!-- ハンバーガーアイコン -->
+            <div class="menu-toggle">
+                <img src="{{ url_for('static', filename='icons/menu.svg') }}" alt="Menu">
+            </div>
+            <!-- メニューリスト -->
+            <ul class="menu">
+                <li><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='icons/list_display.svg') }}" alt="List Display" class="nav-icon"> ゴミ箱一覧</a></li>
+                <li><a href="{{ url_for('new_bin') }}"><img src="{{ url_for('static', filename='icons/new_registration.svg') }}" alt="New Registration" class="nav-icon"> 新規登録</a></li>
+                <li><a href="{{ url_for('search_bin') }}"><img src="{{ url_for('static', filename='icons/search.svg') }}" alt="Search" class="nav-icon"> 検索</a></li>
+                <li><a href="{{ url_for('reset_garbage') }}"><img src="{{ url_for('static', filename='icons/reset_garbage.svg') }}" alt="Reset garbage" class="nav-icon"> 回収</a></li>
+                <li><a href="{{ url_for('edit_bin') }}"><img src="{{ url_for('static', filename='icons/edit_bin.svg') }}" alt="Edit Bin" class="nav-icon"> 編集</a></li>
+                <li><a href="{{ url_for('help') }}"><img src="{{ url_for('static', filename='icons/help.svg') }}" alt="Help" class="nav-icon"> ヘルプ</a></li>
+                <li><a href="{{ url_for('memory_game') }}"><img src="{{ url_for('static', filename='icons/memory_game.svg') }}" alt="Memory Game" class="nav-icon"> 音神経衰弱</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- コンテンツブロック -->
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- ナビゲーションバー -->
+    <nav class="bottom-navigation">
+        <a href="{{ url_for('index') }}" class="back-button">ゴミ箱一覧に戻る</a>
+    </nav>
+
+    <footer>
+        <!-- ロゴ表示 -->
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="footer-logo">
+    </footer>
+</body>
+</html>

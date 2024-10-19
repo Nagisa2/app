@@ -1,0 +1,23 @@
+<!-- templates/search_bin.html -->
+<!-- ゴミ箱検索ページ -->
+
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>ゴミ箱の検索</h2>
+
+<form method="POST">
+    <div class="form-group">
+        <label for="searched_bin_id">ゴミ箱IDを入力してください:</label>
+        <input type="text" name="searched_bin_id" id="searched_bin_id" required maxlength="8">
+    </div>
+    <button type="submit">検索</button>
+</form>
+
+{% if error_message %}
+    <div class="alert alert-danger">{{ error_message }}</div>
+{% endif %}
+
+<!-- JavaScriptファイルを読み込む -->
+<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+{% endblock %}

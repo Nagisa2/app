@@ -1,0 +1,25 @@
+<!-- templates/index.html -->
+<!-- ゴミ箱の一覧ページ(起動時のページ) -->
+
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>ゴミ箱一覧</h2>
+<div class="bin-list">
+    {% for bin, notifications in bins %}
+        <div class="bin-item">
+            <a href="{{ url_for('bin_details', bin_id=bin[0]) }}">
+                ID: {{ bin[0] }} - 設置場所: {{ bin[1] }}
+            </a>
+            <!-- 通知を表示 -->
+            {% if notifications %}
+                <ul class="notifications">
+                    {% for notification in notifications %}
+                        <li class="notification-item">{{ notification }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
