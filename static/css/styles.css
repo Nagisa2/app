@@ -255,25 +255,6 @@ footer img {
     .form-group {
         margin-bottom: 20px;
     }
-
-    .back-button {
-        display: inline-block;
-        padding: 5px 10px; /* パディングを少し小さくする */
-        font-size: 14px; /* フォントサイズを調整 */
-        margin: 0; /* マージンをリセット */
-    }
-
-    .bottom-navigation {
-        position: fixed; /* スクロールしても画面に固定 */
-        bottom: 60px; /* フッターの高さを考慮 */
-        left: 0;
-        right: 0;
-        background-color: #f8f9fa; /* 背景色 */
-        text-align: center;
-        padding: 10px;
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* シャドウ効果 */
-        height: 40px; /* フッター高さを半分に調整 */
-    }
 }
 
 /* フォームのスタイル */
