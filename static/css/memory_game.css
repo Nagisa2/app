@@ -102,7 +102,7 @@
     
     .game-board {
         display: grid;
-        grid-template-columns: repeat(5, 1fr); /* 5列 */
+        grid-template-columns: repeat(3, 1fr); /* 5列 */
         justify-content: center; /* 水平方向に中央揃え */
     }
 }
