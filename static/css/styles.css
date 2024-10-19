@@ -1,0 +1,331 @@
+/* static/css/styles.css */
+
+/* 全体のスタイル */
+html, body {
+    height: 100%; /* ビューポートの高さを100%に設定 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* 横方向のスクロールを防止する */
+    overflow-y: auto;   /* 縦方向のスクロールを有効にする */
+    
+    background-image: url('/static/images/background3.png'); /* 背景画像のパス */
+    background-size: cover; /* 画像を画面全体に合わせる */
+    background-position: center;
+    background-repeat: no-repeat; /* 繰り返しを防止 */
+}
+
+body::after {
+    content: "";
+    display: block;
+    height: 60px;
+}
+
+/* ヘッダーのスタイル */
+header {
+    background-color: #67be8d;
+    color: #fff;
+    padding: 10px;
+    position: relative; /* メニュー切り替えアイコンの位置調整用 */
+}
+
+/* メニュー切り替えアイコンのスタイル */
+.menu-toggle {
+    display: none; /* デフォルトでは非表示 */
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-toggle img {
+    width: 100%;
+    height: auto;
+}
+
+/* ナビゲーションのスタイル */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* 項目を中央に揃える */
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none; /* 下線を消去 */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+nav ul li a img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+/* メインコンテンツのスタイル */
+main {
+    padding: 20px;
+    margin-bottom: 60px; /* フッターのスペースを確保 */
+    background-color: transparent;
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: #67be8d;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* フッター内のロゴのスタイル */
+footer img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px;
+}
+
+/* ゴミ箱リストのスタイル */
+.bin-list {
+    margin: 20px 0;
+    max-width: 800px; /* 最大幅を設定 */
+}
+
+/* リンクの下線を消す */
+.bin-list a {
+    color: inherit; /* テキストの色を親要素から引き継ぐ */
+    text-decoration: none; /* 下線を消す */
+}
+
+.bin-list a:hover {
+    text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+/* 囲い全体をクリック可能にする */
+.bin-item {
+    border: 1px solid #000;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.bin-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* 全体をリンクとして機能させる */
+    width: 100%; /* リンクの範囲を親要素に合わせる */
+    height: 100%;
+}
+
+/* パーセント表示のスタイル */
+.percentage {
+    padding: 2px 5px;
+    color: #000;
+    font-size: 24px;
+    border-radius: 4px; /* 角を丸くする */
+}
+
+.percentage.low {
+    background-color: rgb(120, 230, 120);
+}
+
+.percentage.medium {
+    background-color: rgb(250, 250, 150);
+}
+
+.percentage.high {
+    background-color: rgb(255, 110, 110);
+}
+
+/* ごみアイテムのスタイル */
+.garbage-item {
+    display: flex;
+    align-items: center; /* アイコンとテキストを中央に揃える */
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.garbage-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px; /* アイコンとテキストの間にスペースを追加 */
+}
+
+/* モバイルメニュ―のスタイル */
+.menu {
+    display: flex; /* デスクトップ版では常に表示 */
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu ul li {
+    display: block;
+    margin-right: 0;
+}
+
+/* モバイル版のスタイル */
+@media (max-width: 768px) {
+    /* モバイル版の全体スタイル */
+    body {
+        background-image: url('/static/images/background_small2.png'); /* モバイル用の背景画像 */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* メインコンテンツのスタイル */
+    main {
+        padding: 20px;
+        margin-bottom: 60px;
+        background-color: transparent;
+    }
+
+    .menu {
+        display: none; /* モバイル版ではデフォルトで非表示 */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* ヘッダーの高さに合わせて位置調整 */
+        left: 0;
+        width: 100%;
+        background-color: #67be8d;
+        z-index: 1000; /* メニューを最前面に表示 */
+    }
+
+    .menu.active {
+        display: flex; /* メニュー切り替え時に表示 */
+    }
+
+    .menu-toggle {
+        display: block; /* モバイル版で表示 */
+        z-index: 1001; /* メニューアイコンを最前面に表示 */
+    }
+
+    .menu-toggle img {
+        width: 35px; /* アイコンのサイズ */
+        height: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* 項目を左揃えにする */
+    }
+
+    nav ul li {
+        margin-right: 0; /* 余白をリセット */
+        border: none; /* モバイル版では線を非表示にする */
+        padding-left: 0; /* 線のための余白をリセット */
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+}
+
+/* フォームのスタイル */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block; /* ラベルをブロック表示にして改行 */
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%; /* 入力フィールドの幅を100%に設定 */
+    padding: 8px;
+    box-sizing: border-box; /* パディングとボーダーを幅に含む */
+}
+
+/* PC版の入力フィールドの幅を調整 */
+@media (min-width: 769px) {
+    .form-group input {
+        width: 50%; /* PC版では入力フィールドの幅を50%に設定 */
+    }
+    nav ul li + li {
+        border-left: 1px solid #000; /* 項目間に線を追加 */
+        padding-left: 20px; /* 線の後にスペースを追加 */
+    }
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li.success {
+    color: green;
+}
+
+.flashes li.error {
+    color: red;
+}
+
+.notifications {
+    margin-top: 5px;
+    color: red;
+    font-weight: bold;
+}
+
+.notification-item {
+    list-style: none;
+}
+
+.bottom-navigation {
+    position: fixed; /* スクロールしても画面に固定 */
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    background-color: #f8f9fa; /* 背景色 */
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* シャドウ効果 */
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* アニメーション効果 */
+}
+
+.back-button:hover {
+    background-color: #67be8d;
+    color: white; /* ホバー時の色 */
+}
