@@ -48,10 +48,10 @@ scipy==1.12.0
 serial==0.0.97
 setuptools==69.0.3
 six==1.16.0
-SQLAlchemy==1.4.47
+SQLAlchemy==1.4.47  # 互換性のあるバージョンに修正
 typing_extensions==4.12.2
 tzdata==2024.1
 tzlocal==5.2
 urllib3==2.2.3
-Werkzeug==2.2.3  # Flask 2.3.3に互換性のあるバージョン
+Werkzeug==2.0.3  # Flask 2.3.3に互換性のあるバージョン
 WTForms==3.1.2
