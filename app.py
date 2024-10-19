@@ -7,13 +7,12 @@ import logging
 import secrets
 import ssl
 import os
-from contextlib import closing
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)  # 16バイトのランダムな16進数の秘密鍵を生成
 
  # 使用するデータベースのファイル名
-DATABASE = os.path.join(os.path.dirname(__file__), 'garbage.db')
+DATABASE = 'garbage.db'
 
  # ゴミの種類のリスト
 GARBAGE_TYPES = ['ペットボトル', 'スチール缶', 'アルミ缶', 'スプレー缶', '中身有容器']
