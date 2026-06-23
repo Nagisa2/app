@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="ページ-1" id="DtH6AvwE5zcW3kwFTXOg">
-    <mxGraphModel dx="803" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1609" dy="918" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -218,11 +218,11 @@
         <mxCell id="3QeEdlnvxezNMO2gkXxy-54" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="DetectionOutput" vertex="1">
           <mxGeometry height="30" width="96" x="628" y="205" as="geometry" />
         </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-65" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FrameCapture&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="140" x="59" y="530" as="geometry" />
+        </mxCell>
         <mxCell id="3QeEdlnvxezNMO2gkXxy-55" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=310;height=30;" value="合成構造図: HMD検出システム" vertex="1">
           <mxGeometry height="440" width="780" x="24" y="480" as="geometry" />
-        </mxCell>
-        <mxCell id="3QeEdlnvxezNMO2gkXxy-56" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FrameCapture&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="150" width="166" x="44" y="530" as="geometry" />
         </mxCell>
         <mxCell id="3QeEdlnvxezNMO2gkXxy-57" parent="1" style="html=1;whiteSpace=wrap;" value=":FrameCapture" vertex="1">
           <mxGeometry height="30" width="110" x="74" y="560" as="geometry" />
@@ -232,6 +232,57 @@
         </mxCell>
         <mxCell id="3QeEdlnvxezNMO2gkXxy-60" parent="1" style="html=1;whiteSpace=wrap;" value="frameId:int" vertex="1">
           <mxGeometry height="30" width="110" x="74" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-64" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;WebSocketClient&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="140" x="320" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-67" parent="1" style="html=1;whiteSpace=wrap;" value=":WebSocketClient" vertex="1">
+          <mxGeometry height="30" width="110" x="335" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-68" parent="1" style="html=1;whiteSpace=wrap;" value="txQueue:Message[]" vertex="1">
+          <mxGeometry height="30" width="110" x="335" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-69" parent="1" style="html=1;whiteSpace=wrap;" value="latency:float" vertex="1">
+          <mxGeometry height="30" width="110" x="335" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-70" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="194" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-71" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="315" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-72" edge="1" parent="1" source="3QeEdlnvxezNMO2gkXxy-71" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="3QeEdlnvxezNMO2gkXxy-70" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="350" y="620" as="sourcePoint" />
+            <mxPoint x="400" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-73" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="455" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-75" parent="1" style="html=1;whiteSpace=wrap;" value="YOLOServer" vertex="1">
+          <mxGeometry height="30" width="110" x="599" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-77" edge="1" parent="1" source="3QeEdlnvxezNMO2gkXxy-73" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="3QeEdlnvxezNMO2gkXxy-75" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="550" y="550" as="sourcePoint" />
+            <mxPoint x="600" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-78" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;DetectionProcessor&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="190" width="140" x="320" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-79" parent="1" style="html=1;whiteSpace=wrap;" value=":DetectionProcessor" vertex="1">
+          <mxGeometry height="30" width="110" x="334" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-80" parent="1" style="html=1;whiteSpace=wrap;" value="detections:Detection[]" vertex="1">
+          <mxGeometry height="30" width="120" x="330" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-81" parent="1" style="html=1;whiteSpace=wrap;" value="capturePose:Pose" vertex="1">
+          <mxGeometry height="30" width="110" x="334" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="3QeEdlnvxezNMO2gkXxy-82" parent="1" style="html=1;whiteSpace=wrap;" value="frameId:int" vertex="1">
+          <mxGeometry height="30" width="110" x="334" y="860" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
